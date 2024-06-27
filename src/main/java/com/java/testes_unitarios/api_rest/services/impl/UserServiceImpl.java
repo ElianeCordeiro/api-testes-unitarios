@@ -4,12 +4,14 @@ import com.java.testes_unitarios.api_rest.domain.User;
 import com.java.testes_unitarios.api_rest.domain.dto.UserDTO;
 import com.java.testes_unitarios.api_rest.repositories.UserRepository;
 import com.java.testes_unitarios.api_rest.services.UserService;
+import com.java.testes_unitarios.api_rest.services.exceptions.DataIntegratyViolationException;
 import com.java.testes_unitarios.api_rest.services.exceptions.ObjectNotFoundException;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.ui.ModelMap;
 
+import javax.swing.text.html.Option;
 import java.util.Optional;
 import java.util.List;
 
@@ -34,6 +36,14 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User create(UserDTO obj) {
+        findByEmail(obj);
         return repository.save(mapper.map(obj, User.class));
+    }
+
+    private void findByEmail(UserDTO obj){
+        Optional<User> user = repository.findByEmail(obj.getEmail());
+        if(user.isPresent()){
+            throw new DataIntegratyViolationException("E-mail já cadastrado no sistema");
+        }
     }
 }
