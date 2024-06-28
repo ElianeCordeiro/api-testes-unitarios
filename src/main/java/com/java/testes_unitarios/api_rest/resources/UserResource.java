@@ -27,13 +27,11 @@ public class UserResource {
 
     @GetMapping(value = ID)
     public ResponseEntity<UserDTO> findById(@PathVariable Integer id){
-
         return ResponseEntity.ok().body(mapper.map(service.findById(id), UserDTO.class));
     }
 
     @GetMapping
     public ResponseEntity<List<UserDTO>> findAll(){
-
         List<UserDTO> listDTO = service.findAll().stream()
                 .map(u -> mapper.map(u, UserDTO.class)).collect(Collectors.toList());
         return ResponseEntity.ok().body(listDTO);
