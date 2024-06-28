@@ -3,7 +3,6 @@ package com.java.testes_unitarios.api_rest.resources;
 import com.java.testes_unitarios.api_rest.domain.User;
 import com.java.testes_unitarios.api_rest.domain.dto.UserDTO;
 import com.java.testes_unitarios.api_rest.services.UserService;
-import org.apache.catalina.UserDatabase;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
