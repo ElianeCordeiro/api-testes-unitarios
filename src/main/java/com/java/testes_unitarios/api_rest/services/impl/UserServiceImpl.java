@@ -9,11 +9,9 @@ import com.java.testes_unitarios.api_rest.services.exceptions.ObjectNotFoundExce
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.ui.ModelMap;
 
-import javax.swing.text.html.Option;
-import java.util.Optional;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class UserServiceImpl implements UserService {
