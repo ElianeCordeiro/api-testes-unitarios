@@ -3,7 +3,7 @@ package com.java.testes_unitarios.api_rest.services.impl;
 import com.java.testes_unitarios.api_rest.domain.User;
 import com.java.testes_unitarios.api_rest.domain.dto.UserDTO;
 import com.java.testes_unitarios.api_rest.repositories.UserRepository;
-import com.java.testes_unitarios.api_rest.services.exceptions.DataIntegratyViolationException;
+import com.java.testes_unitarios.api_rest.services.exceptions.DataIntegrityViolationException;
 import com.java.testes_unitarios.api_rest.services.exceptions.ObjectNotFoundException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -110,7 +110,7 @@ class UserServiceImplTest {
             optionalUser.get().setId(2);
             service.create(userDTO);
         } catch (Exception ex) {
-            assertEquals(DataIntegratyViolationException.class, ex.getClass());
+            assertEquals(DataIntegrityViolationException.class, ex.getClass());
             assertEquals("E-mail já cadastrado no sistema", ex.getMessage());
         }
     }
@@ -137,7 +137,7 @@ class UserServiceImplTest {
             optionalUser.get().setId(2);
             service.create(userDTO);
         } catch (Exception ex) {
-            assertEquals(DataIntegratyViolationException.class, ex.getClass());
+            assertEquals(DataIntegrityViolationException.class, ex.getClass());
             assertEquals("E-mail já cadastrado no sistema", ex.getMessage());
         }
     }
