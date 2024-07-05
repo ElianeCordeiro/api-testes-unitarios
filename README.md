@@ -8,4 +8,4 @@ Versões dos recursos utilizados:
 * 🌿 Spring Boot 3.3.1
 * 🍹 JUnit 5
 
-Link para o curso do Valdir Cezar Tutoriais no Youtube: [https://youtube.com/playlist?list=PLA8Qj9w4RGkWgyYa485pgf-VAoJgL4rW1&si=C9Q1MgBzGCEC1lhe](url)
+Link para o curso do Valdir Cezar Tutoriais no Youtube: https://youtube.com/playlist?list=PLA8Qj9w4RGkWgyYa485pgf-VAoJgL4rW1&si=C9Q1MgBzGCEC1lhe
